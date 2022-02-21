@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci series</title>
+</head>
+<body>
+    <script>
+        const number=parseInt(prompt("Enter the number"));
+        let num1=0,num2=1,nextTerm;
+        document.write("Fibonacci series");
+        console.log("Fibonacci series");
+        document.write("<br>");
+
+        for ( let i=1;i<=number;i++){
+            document.write(num1);
+            console.log(num1);
+
+            nextTerm=num1+num2;
+            num1=num2;
+            num2=nextTerm;
+        }
+    </script>
+</body>
+</html>

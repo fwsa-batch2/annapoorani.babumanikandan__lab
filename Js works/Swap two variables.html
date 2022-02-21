@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Swap two variables </title>
+</head>
+<body>
+    <script>
+        let Firstname =prompt('Enter your firstname : ');
+        let Lastname = prompt('Enter your lastname : ');
+        let temp ;
+
+        // Swap two variables
+
+        temp = Firstname;
+        Lastname = Firstname;
+        Lastname = temp;
+        // document.write(Firstname,Lastname,temp);
+        // console.log(Firstname,Lastname,temp)
+
+        [Firstname,Lastname,temp] = [temp,Lastname,Firstname];
+        document.write(Firstname,Lastname,temp)
+
+        // Firstname = Lastname;
+        // Lastname = Firstname;
+        //  document.write('Result of Swapping :: ' + Firstname );
+        //  document.write("<br>")
+        //  document.write('Result of Swapping :: ' + Lastname );
+
+    </script>
+</body>
+</html>
