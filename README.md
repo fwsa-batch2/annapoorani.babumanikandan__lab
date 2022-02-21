@@ -15,6 +15,11 @@ SHOW DATABASES;
 | sys                |
 | tuition            |
 
+## To create a database
+```
+CREATE DATABASE school;
+```
+
 ## To select a database
 ```
 USE college;
@@ -83,5 +88,15 @@ UPDATE  student_Info SET pass = 1 WHERE name='Kani';
 |       6 | Hema      | Balu      |   18 | 2003-03-04 |    80 |       32 |    1 |
 |       7 | shana     | Raj       |   19 | 2002-03-04 |   100 |       48 |    1 | 
 |       8 | Kani      | Raj       |   18 | 2004-06-05 |    91 |       25 |    1 |
+
+## To count number of rows
+```
+SELECT COUNT(*) FROM  student_Info;
+```
+
+| COUNT(*) |
+|----------|
+|        9 |
+
 
 
