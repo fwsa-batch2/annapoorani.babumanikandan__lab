@@ -17,13 +17,20 @@ SHOW DATABASES;
 
 ## To create a database
 ```
-CREATE DATABASE school;
+CREATE DATABASE tab_name;
 ```
+#### Example : 
+CREATE DATABASE fidaa;
+
 
 ## To select a database
 ```
-USE college;
+USE database_name;
 ```
+#### Example : 
+USE fidaa;
+
+
 ## To see the tables whether there is a table or not
 ```
 SHOW TABLES;
