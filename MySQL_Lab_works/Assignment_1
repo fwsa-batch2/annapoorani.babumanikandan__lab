@@ -1,0 +1,76 @@
+SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| college            |
+| fidaa              |
+| fidaa_copy         |
+| information_schema |
+| library            |
+| movie              |
+| mysql              |
+| office             |
+| performance_schema |
+| sys                |
+| tuition            |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE school;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE school;
+Database changed
+mysql> create table students (
+    -> id int primary key auto_increment,
+    -> name varchar(100) not null,
+    -> email varchar(100) not null,
+    -> mobile_no bigint not null,
+    -> password varchar(100) not null,
+    -> gender char(1) not null,
+    -> dob date,
+    -> created_date timestamp not null default current_timestamp,
+    -> unique (email),
+    -> check ( gender in ('M','F'))
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_school |
++------------------+
+| students         |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> DESC students;
++--------------+--------------+------+-----+-------------------+-------------------+
+| Field        | Type         | Null | Key | Default           | Extra             |
++--------------+--------------+------+-----+-------------------+-------------------+
+| id           | int          | NO   | PRI | NULL              | auto_increment    |
+| name         | varchar(100) | NO   |     | NULL              |                   |
+| email        | varchar(100) | NO   | UNI | NULL              |                   |
+| mobile_no    | bigint       | NO   |     | NULL              |                   |
+| password     | varchar(100) | NO   |     | NULL              |                   |
+| gender       | char(1)      | NO   |     | NULL              |                   |
+| dob          | date         | YES  |     | NULL              |                   |
+| created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++--------------+--------------+------+-----+-------------------+-------------------+
+8 rows in set (0.00 sec)
+
+mysql> INSERT INTO students (name,email,mobile_no,password,gender,dob) VALUES ('Anu','Anu_01@gmail.com',9828374654,'@nu_91','F','2000/02/12'),('Mano','Mano1@gmail.com',9828371624,'M@no_01','M','2003/08/07'),('Aaron','Aaron@gmail.com',9788371624,'Aaro_07','M','2002/03/01');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM students;
++----+-------+------------------+------------+----------+--------+------------+---------------------+
+| id | name  | email            | mobile_no  | password | gender | dob        | created_date        |
++----+-------+------------------+------------+----------+--------+------------+---------------------+
+|  1 | Anu   | Anu_01@gmail.com | 9828374654 | @nu_91   | F      | 2000-02-12 | 2022-03-01 22:42:51 |
+|  2 | Mano  | Mano1@gmail.com  | 9828371624 | M@no_01  | M      | 2003-08-07 | 2022-03-01 22:42:51 |
+|  3 | Aaron | Aaron@gmail.com  | 9788371624 | Aaro_07  | M      | 2002-03-01 | 2022-03-01 22:42:51 |
++----+-------+------------------+------------+----------+--------+------------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> 
+
