@@ -47,7 +47,7 @@ Database changed
      unique (email),
      check ( gender in ('M','F')));
      
-    ```
+ ```
   
 
 ## Create a table named as 'student_class'
