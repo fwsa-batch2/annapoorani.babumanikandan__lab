@@ -1,4 +1,6 @@
+```
 SHOW DATABASES;
+```
 
 | Database           |
 |--------------------|
@@ -16,12 +18,14 @@ SHOW DATABASES;
 
 
 
-``` CREATE DATABASE school;
+``` 
+CREATE DATABASE school;
 ```
 
 Query OK, 1 row affected (0.01 sec)
 
-``` USE school;
+``` 
+USE school;
 ```
 Database changed
 mysql> create table students (
