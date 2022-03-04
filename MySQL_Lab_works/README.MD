@@ -1,7 +1,7 @@
 SHOW DATABASES;
-+--------------------+
+
 | Database           |
-+--------------------+
+|--------------------|
 | college            |
 | fidaa              |
 | fidaa_copy         |
@@ -13,13 +13,16 @@ SHOW DATABASES;
 | performance_schema |
 | sys                |
 | tuition            |
-+--------------------+
-11 rows in set (0.00 sec)
 
-mysql> CREATE DATABASE school;
+
+
+``` CREATE DATABASE school;
+```
+
 Query OK, 1 row affected (0.01 sec)
 
-mysql> USE school;
+``` USE school;
+```
 Database changed
 mysql> create table students (
     -> id int primary key auto_increment,
