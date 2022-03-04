@@ -64,9 +64,14 @@ SHOW TABLES;
 ```
 ### Result
 
+
 | Tables_in_school |
-|------------------|
+|:----------------:|
+| student_class    |
 | students         |
+
+2 rows in set (0.01 sec)
+
 
 1 row in set (0.01 sec)
 
