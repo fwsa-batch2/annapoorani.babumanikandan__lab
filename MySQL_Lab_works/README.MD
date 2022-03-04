@@ -1,6 +1,6 @@
-### MySQL Lab Practices
+## MySQL Lab Practices
 
-
+## To show the databases
 ```
 SHOW DATABASES;
 ```
@@ -46,12 +46,9 @@ Database changed
     created_date timestamp not null default current_timestamp,
      unique (email),
      check ( gender in ('M','F')));
-    ```
-    
-### Result
      
-Query OK, 0 rows affected (0.05 sec)
-
+    ```
+  
 
 ## Create a table named as 'student_class'
 
@@ -77,6 +74,7 @@ SHOW TABLES;
 
 ```
 DESC students;
+
 ```
 
 | Field        | Type         | Null | Key | Default           | Extra             |
