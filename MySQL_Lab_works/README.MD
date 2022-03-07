@@ -234,7 +234,7 @@ SELECT COUNT(*) FROM student_class WHERE status='active';
 ### Result
 | COUNT(*) |
 |:--------:|
-|        4 |
+|        5 |
 
 1 row in set (0.00 sec)
 
