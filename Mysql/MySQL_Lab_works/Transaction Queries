@@ -4,8 +4,6 @@
 +--------------------+
 | college            |
 | fidaa              |
-| fidaa_copy         |
-| hello              |
 | information_schema |
 | library            |
 | movie              |
@@ -16,15 +14,18 @@
 | sys                |
 | tuition            |
 +--------------------+
-13 rows in set (0.01 sec)
+
+To create a database as 'school_management' :
 
 CREATE DATABASE school_management;
-Query OK, 1 row affected (0.02 sec)
 
+To select a database :
 
 USE school_management;
+
 Database changed
 
+Table 1 named as user: 
 
  CREATE TABLE user(id tinyint primary key  auto_increment, name varchar(30) not null);
 
@@ -38,7 +39,7 @@ Database changed
 +-------+-------------+------+-----+---------+----------------+
 
 
-
+Table 2 named as batches :
 
 CREATE TABLE batches(id tinyint , name varchar(30) not null ,foreign key(id)  REFERENCES user(id)) ;
 
@@ -51,6 +52,7 @@ CREATE TABLE batches(id tinyint , name varchar(30) not null ,foreign key(id)  RE
 +-------+-------------+------+-----+---------+----------------+
 
 
+Table 3 named as course :
 
  CREATE TABLE course(id tinyint, course_name varchar(30) not null ,foreign key(id)  REFERENCES user(id)) ;
 
@@ -59,11 +61,12 @@ CREATE TABLE batches(id tinyint , name varchar(30) not null ,foreign key(id)  RE
 +-------------+-------------+------+-----+---------+----------------+
 | Field       | Type        | Null | Key | Default | Extra          |
 +-------------+-------------+------+-----+---------+----------------+
-| id          | tinyint     | NO   | MUL | NULL    | |
+| id          | tinyint     | NO   | MUL | NULL    |                |
 | course_name | varchar(30) | NO   |     | NULL    |                |
 +-------------+-------------+------+-----+---------+----------------+
 
 
+Inserting the values into the user table :
 
 INSERT INTO user VALUES ( null, 'Anu'),(null,'Sangeetha'),(null, 'Surya'),(null,'Ismail'),(null,'Vaishu'),(null,'Ajay');
 
@@ -79,6 +82,8 @@ SELECT * FROM user;
 |  6 | Ajay      |
 +----+-----------+
 
+
+Inserting the values into the batches table :
 
  INSERT INTO batches VALUES ( null, 'Batch1'),(null, 'Batch2'),(null,'Batch1'),(null,'Batch1'),(null,'Batch1');
 
@@ -97,6 +102,7 @@ SELECT * FROM user;
 
 
 
+Inserting the values into the course table :
 
 INSERT INTO course VALUES (1,'HTML'),(2,'CSS'),(3,'Js'),(4,'HTML'),(5,'HTML'),(6,'HTML');
 
@@ -115,7 +121,7 @@ INSERT INTO course VALUES (1,'HTML'),(2,'CSS'),(3,'Js'),(4,'HTML'),(5,'HTML'),(6
 
 
 
-
+Table 4 named as batch_user :
 
 CREATE TABLE batch_user (id tinyint auto_increment primary key, batch_id tinyint , foreign key(batch_id) REFERENCES batches(id), user_id tinyint, foreign key(user_id) REFERENCES user(id) );
 
@@ -131,17 +137,16 @@ CREATE TABLE batch_user (id tinyint auto_increment primary key, batch_id tinyint
 +----------+---------+------+-----+---------+----------------+
 
 
+Inserting the values into the  batche_user :
 
 INSERT INTO batch_user VALUES (1,1,1),(2,1,2);
 
 
 
-
+Table 5 named as batch_courses :
 
 CREATE TABLE batch_courses (id tinyint primary key auto_increment, batch_id tinyint, foreign key(batch_id) references batches(id),course_id tinyi
 nt, foreign key(course_id) references course(id)   );
-
-
 
 
  DESC batch_courses;
@@ -154,11 +159,9 @@ nt, foreign key(course_id) references course(id)   );
 +-----------+---------+------+-----+---------+----------------+
 
 
+Inserting the values into the  batche_courses :
 
-
-mysql> INSERT INTO batch_courses VALUES (null,1,2),(2,1,1);
-
-
+INSERT INTO batch_courses VALUES (null,1,2),(2,1,1);
 
 
 SELECT * FROM batch_courses;
@@ -169,8 +172,7 @@ SELECT * FROM batch_courses;
 |  2 |        1 |         1 |
 +----+----------+-----------+
 
-
-
+To list all the tables :
 
  SHOW TABLES;
 +-----------------------------+
