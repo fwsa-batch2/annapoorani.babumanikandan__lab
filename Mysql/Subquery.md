@@ -47,7 +47,7 @@ SELECT * FROM employees;
 |  6 | Keerthana |  29 | F      | IT        | Mumbai    | 100000 |
 
 
-### Finf the max salary of employees with dept by using subquery
+### Find the max salary of employees with dept by using subquery
 ```
  SELECT Dept FROM employees WHERE salary =(SELECT MAX(salary) FROM employees);
  ```
@@ -70,7 +70,7 @@ SELECT MAX(salary) FROM employees;
 
 
 
-## Finf the min salary of employees with dept by using subquery
+## Find the min salary of employees with dept by using subquery
 ```
 SELECT Dept FROM employees WHERE salary =(SELECT MIN(salary) FROM employees);
 ```
