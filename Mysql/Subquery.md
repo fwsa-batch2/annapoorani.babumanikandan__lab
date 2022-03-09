@@ -1,13 +1,19 @@
  
+ ## Subquery
  
+ ### Create a table as employees
  
+ ```
  CREATE TABLE employees(id int primary key auto_increment, epm_name varchar(30) unique not null,age tinyint not null, gender enum('F','M') ,Dept varchar(30) default 'IT',city varchar(30) not null ,salary int not null ) ;
-Query OK, 0 rows affected (0.05 sec)
+ ```
 
-mysql> DESC employees;
-+----------+---------------+------+-----+---------+----------------+
+### Describe the table
+```
+ DESC employees;
+ ```
+
 | Field    | Type          | Null | Key | Default | Extra          |
-+----------+---------------+------+-----+---------+----------------+
+|:--------:|:-------------:|:----:|:---:|:-------:|:--------------:|
 | id       | int           | NO   | PRI | NULL    | auto_increment |
 | epm_name | varchar(30)   | NO   | UNI | NULL    |                |
 | age      | tinyint       | NO   |     | NULL    |                |
@@ -15,83 +21,99 @@ mysql> DESC employees;
 | Dept     | varchar(30)   | YES  |     | IT      |                |
 | city     | varchar(30)   | NO   |     | NULL    |                |
 | salary   | int           | NO   |     | NULL    |                |
-+----------+---------------+------+-----+---------+----------------+
-7 rows in set (0.01 sec)
 
 
-INSERT INTO employees VALUES ;
-Query OK, 1 row affected (0.01 sec)
 
+
+### Inserting the values in employees table
+
+```
 INSERT INTO employees VALUES( null,'Anuraj',25,'F',IT'Chennai',75000), ( null,'Nidhima',27,'F','Sales','Chennai',85000),(null,'Sangeetha',32,'F','Marketing','Bangalore',100000),(null,'Adi',42,'M','Sales','Bangalore',60000),(null,'Vaishnavi',30,'F','Marketing','Mumbai',90000),(null,'Keerthana',29,'F','IT','Mumbai',100000);
+```
 
 
-Query OK, 6 rows affected (0.01 sec)
-Records: 6 Duplicates: 0  Warnings: 0
+### Select the table 
+```
+SELECT * FROM employees;
+```
 
-mysql> SELECT * FROM employees;
-+----+-----------+-----+--------+-----------+-----------+--------+
 | id | epm_name  | age | gender | Dept      | city      | salary |
-+----+-----------+-----+--------+-----------+-----------+--------+
+|:--:|:---------:|:---:|:------:|:---------:|:---------:|:------:|
 |  1 | Anuraj    |  25 | M      | IT        | Chennai   |  75000 |
 |  2 | Nidhima   |  27 | F      | Sales     | Chennai   |  85000 |
 |  3 | Sangeetha |  32 | F      | Marketing | Bangalore | 100000 |
 |  4 | Adi       |  42 | M      | Sales     | Bangalore |  60000 |
 |  5 | Vaishnavi |  30 | F      | Marketing | Mumbai    |  90000 |
 |  6 | Keerthana |  29 | F      | IT        | Mumbai    | 100000 |
-+----+-----------+-----+--------+-----------+-----------+--------+
-6 rows in set (0.00 sec)
 
-mysql> SELECT Dept FROM employees WHERE salary =(SELECT MAX(salary) FROM employees);
-+-----------+
+
+### Finf the max salary of employees with dept by using subquery
+```
+ SELECT Dept FROM employees WHERE salary =(SELECT MAX(salary) FROM employees);
+ ```
+
 | Dept      |
-+-----------+
+|:---------:|
 | Marketing |
 | IT        |
-+-----------+
-2 rows in set (0.00 sec)
 
-mysql> SELECT MAX(salary) FROM employees;
-+-------------+
+
+### find the max salary of employees
+```
+SELECT MAX(salary) FROM employees;
+```
+
+
 | MAX(salary) |
-+-------------+
+|:-----------:|
 |      100000 |
-+-------------+
-1 row in set (0.00 sec)
 
 
+
+## Finf the min salary of employees with dept by using subquery
+```
 SELECT Dept FROM employees WHERE salary =(SELECT MIN(salary) FROM employees);
-+-------+
+```
+
 | Dept  |
-+-------+
+|:-----:|
 | Sales |
-+-------+
-1 row in set (0.00 sec)
 
-mysql> SELECT MIN(salary) FROM employees;
-+-------------+
+
+
+### find the min salary of employees
+```
+ SELECT MIN(salary) FROM employees;
+ ```
+ 
+
 | MIN(salary) |
-+-------------+
+|:-----------:|
 |       60000 |
-+-------------+
-1 row in set (0.00 sec)
 
 
+
+### Find the salary which is less than the avg salary of employees 
+```
 SELECT epm_name, Dept, salary FROM employees WHERE salary <(SELECT AVG(salary) FROM employees);
-+----------+-------+--------+
+```
+
 | epm_name | Dept  | salary |
-+----------+-------+--------+
+|:--------:|:-----:|:------:|
 | Anuraj   | IT    |  75000 |
 | Adi      | Sales |  60000 |
-+----------+-------+--------+
-2 rows in set (0.00 sec)
 
-mysql> (SELECT AVG(salary) FROM employees);
-+-------------+
+
+### AVG of the salary
+```
+ SELECT AVG(salary) FROM employees;
+ ```
+
 | AVG(salary) |
-+-------------+
+|:-----------:|
 |  85000.0000 |
-+-------------+
-1 row in set (0.00 sec)
+
+
 
 
 
