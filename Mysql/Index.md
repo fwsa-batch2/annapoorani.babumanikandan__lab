@@ -1,5 +1,9 @@
 ## INDEX
 
+## Clustered Index
+
+### Primary Key creates the cluestered index by defaut.
+
 ### Select the table named as 'employees'
 
 ```
@@ -18,7 +22,6 @@ SELECT * FROM employees;
 
 
 ## Select the employees with name,Dept and salary who are all belongs to Dept 'IT'
-
 
 ```
  SELECT name, Dept, salary FROM employees WHERE Dept='IT';
@@ -79,6 +82,7 @@ SELECT * FROM employees;
 
 
 ## Drop the index
+
 ```
  ALTER TABLE employees DROP INDEX IT_dept;
  ```
