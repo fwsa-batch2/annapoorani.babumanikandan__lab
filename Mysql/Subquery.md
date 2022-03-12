@@ -116,71 +116,61 @@ SELECT epm_name, Dept, salary FROM employees WHERE salary <(SELECT AVG(salary) F
 
 
 
-
+## Create a table named as 'products'
+```
 CREATE TABLE products (p_id int primary key auto_increment, p_name varchar(30) not null unique,sell_price int, p_type Enum('Luxury','Non-Luxury'));
-Query OK, 0 rows affected (0.05 sec)
+```
 
-mysql> DESC products;
-+------------+-----------------------------+------+-----+---------+----------------+
+## Desc the 'products' table 
+```
+ DESC products;
+ ```
+
 | Field      | Type                        | Null | Key | Default | Extra          |
-+------------+-----------------------------+------+-----+---------+----------------+
+|:----------:|:---------------------------:|:----:|:---:|:-------:|:--------------:|
 | p_id       | int                         | NO   | PRI | NULL    | auto_increment |
 | p_name     | varchar(30)                 | NO   | UNI | NULL    |                |
 | sell_price | int                         | YES  |     | NULL    |                |
 | p_type     | enum('Luxury','Non-Luxury') | YES  |     | NULL    |                |
-+------------+-----------------------------+------+-----+---------+----------------+
-4 rows in set (0.01 sec)
 
-mysql> INSERT INTO products VALUES (null,'T-shirt',150,'Non-Luxury');
-Query OK, 1 row affected (0.01 sec)
 
-mysql> SELECT * FROM products;
-+------+---------+------------+------------+
+## Insert values in the products table
+```
+ INSERT INTO products VALUES (null,'T-shirt',150,'Non-Luxury'),(null,'Mobile',15000,'Luxury'), (null,'AC',40000,'Luxury');
+```
+
+## Select the products table
+
+```
+ SELECT * FROM products;
+ ```
+ 
 | p_id | p_name  | sell_price | p_type     |
-+------+---------+------------+------------+
-|    1 | T-shirt |        150 | Non-Luxury |
-+------+---------+------------+------------+
-1 row in set (0.00 sec)
-
-mysql> INSERT INTO products VALUES (null,'Mobile',15000,'Luxury');
-Query OK, 1 row affected (0.01 sec)
-
-mysql> INSERT INTO products VALUES (null,'AC',40000,'Luxury');
-Query OK, 1 row affected (0.01 sec)
-
-mysql> SELECT * FROM products;
-+------+---------+------------+------------+
-| p_id | p_name  | sell_price | p_type     |
-+------+---------+------------+------------+
+|:----:|:-------:|:----------:|:----------:|
 |    1 | T-shirt |        150 | Non-Luxury |
 |    2 | Mobile  |      15000 | Luxury     |
 |    3 | AC      |      40000 | Luxury     |
-+------+---------+------------+------------+
-3 rows in set (0.00 sec)
 
 
-
-
-
+## Create a table named as 'orders'
+```
 CREATE TABLE orders (order_id int , p_soled varchar(30),selling_price int );
-Query OK, 0 rows affected (0.04 sec)
+```
 
+## Insert values in the 'orders' table
+```
+ INSERT INTO orders SELECT p_id ,p_name,sell_price FROM products WHERE p_id IN (SELECT p_id FROM products WHERE sell_price >150);
+```
 
+## Select the orders table
+```
+SELECT * FROM orders;
+```
 
-
-
-mysql> INSERT INTO orders SELECT p_id ,p_name,sell_price FROM products WHERE p_id IN (SELECT p_id FROM products WHERE sell_price >150);
-Query OK, 2 rows affected (0.00 sec)
-Records: 2  Duplicates: 0  Warnings: 0
-
-mysql> SELECT * FROM orders;
-+----------+---------+---------------+
 | order_id | p_soled | selling_price |
-+----------+---------+---------------+
+|:--------:|:-------:|:-------------:|
 |        2 | Mobile  |         15000 |
 |        3 | AC      |         40000 |
-+----------+---------+---------------+
-2 rows in set (0.00 sec)
 
 
 
