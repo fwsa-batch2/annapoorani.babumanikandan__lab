@@ -32,7 +32,7 @@ SELECT * FROM employees;
 
 ## Explain the employees table 
 
-###( The 'EXPLAIN' statement provides information about how MySQL executes statements)
+### (The 'EXPLAIN' statement provides information about how MySQL executes statements)
 
 ```
  EXPLAIN SELECT name, Dept, salary FROM employees WHERE Dept='IT';
