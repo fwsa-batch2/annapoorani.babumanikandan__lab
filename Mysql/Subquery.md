@@ -91,6 +91,15 @@ SELECT Dept FROM employees WHERE salary =(SELECT MIN(salary) FROM employees);
 |:-----------:|
 |       60000 |
 
+## Find the avg of the salary from employees with dept,salary by using subquery
+```
+SELECT Dept,salary FROM employees WHERE salary =(SELECT AVG(salary) FROM employees);
+```
+
+| Dept  | salary |
+|:-----:|:------:|
+| Sales |  85000 |
+
 
 
 ### Find the salary which is less than the avg salary of employees 
