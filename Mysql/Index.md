@@ -1,8 +1,11 @@
 ## INDEX
 
-## Clustered Index
+## Clustered Index :
 
-### Primary Key creates the cluestered index by defaut.
+### ( Primary Key creates the cluestered index by defaut )
+
+
+## Non Clustered Index :
 
 ### Select the table named as 'employees'
 
