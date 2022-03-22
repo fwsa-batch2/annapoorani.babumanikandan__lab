@@ -238,6 +238,8 @@ DESC user_credentials;
 mysql> SELECT * FROM language;
 ```
 
+### Result :
+
 | id | lang      |
 |:--:|:---------:|
 |  8 | Bengali   |
@@ -249,43 +251,38 @@ mysql> SELECT * FROM language;
 |  1 | Tamil     |
 |  2 | Telugu    |
 
-## Create a table 
-mysql> CREATE TABLE actors(id int PRIMARY KEY AUTO_INCREMENT,name varchar(30) UNIQUE NOT NULL);
-Query OK, 0 rows affected (0.06 sec)
+## Create a table named as 'actors' :
 
-mysql> DESC actors;
-+-------+-------------+------+-----+---------+----------------+
+```
+ CREATE TABLE actors(id int PRIMARY KEY AUTO_INCREMENT,name varchar(30) UNIQUE NOT NULL);
+ ```
+ 
+
+## Describe the 'actors' table :
+
+```
+ DESC actors;
+ ```
+ ### Result :
+
 | Field | Type        | Null | Key | Default | Extra          |
-+-------+-------------+------+-----+---------+----------------+
+|:-----:|:-----------:|:----:|:---:|:-------:|:--------------:|
 | id    | int         | NO   | PRI | NULL    | auto_increment |
 | name  | varchar(30) | NO   | UNI | NULL    |                |
-+-------+-------------+------+-----+---------+----------------+
-2 rows in set (0.01 sec)
 
-mysql> INSERT INTO actors VALUES(null,'Vijay'),(null,'Surya'),(null,'Ajith'),(null,'Simbhu'),(null,'Vijay Devarakonda');
-Query OK, 5 rows affected (0.01 sec)
-Records: 5  Duplicates: 0  Warnings: 0
+## Inserting values into 'actors' table :
+```
+ INSERT INTO actors VALUES(null,'Vijay'),(null,'Surya'),(null,'Ajith'),(null,'Simbhu'),(null,'Vijay Devarakonda'),(null,'Prashanth'),(null,'Vishal'),(null,'Sushanth Singh Rajput'),(null,'Ramcharan'),(null,'Nani');
+ ```
+ ## To see all the values in 'actors' table :
+ 
+```
+SELECT * FROM actors;
+```
+### Result :
 
-mysql> SELECT * FROM actors;
-+----+-------------------+
-| id | name              |
-+----+-------------------+
-|  3 | Ajith             |
-|  4 | Simbhu            |
-|  2 | Surya             |
-|  1 | Vijay             |
-|  5 | Vijay Devarakonda |
-+----+-------------------+
-5 rows in set (0.00 sec)
-
-mysql> INSERT INTO actors VALUES(null,'Prashanth'),(null,'Vishal'),(null,'Sushanth Singh Rajput'),(null,'Ramcharan'),(null,'Nani');
-Query OK, 5 rows affected (0.01 sec)
-Records: 5  Duplicates: 0  Warnings: 0
-
-mysql> SELECT * FROM actors;
-+----+-----------------------+
 | id | name                  |
-+----+-----------------------+
+|:--:|:---------------------:|
 |  3 | Ajith                 |
 | 10 | Nani                  |
 |  6 | Prashanth             |
@@ -296,8 +293,8 @@ mysql> SELECT * FROM actors;
 |  1 | Vijay                 |
 |  5 | Vijay Devarakonda     |
 |  7 | Vishal                |
-+----+-----------------------+
-10 rows in set (0.00 sec)
+
+
 
 mysql> CREATE TABLE actress(id int PRIMARY KEY AUTO_INCREMENT,name varchar(30) UNIQUE NOT NULL);
 Query OK, 0 rows affected (0.06 sec)
