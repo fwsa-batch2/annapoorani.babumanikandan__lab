@@ -597,5 +597,45 @@ SELECT * FROM songs;
 |  3 |        1 | Friendship Anthem   | 0x66696C653A2F2F2F686F6D652F616E6E61706F6F72616E692F465753412D42415443482D322F66696461616D757369636170702D75692F6173736574732F617564696F2F4B616468616970706F6D612E6D7033 |
 |  4 |        1 | Haiyo haiyo         | 0x66696C653A2F2F2F686F6D652F616E6E61706F6F72616E692F465753412D42415443482D322F66696461616D757369636170702D75692F6173736574732F617564696F2F4B616468616970706F6D612E6D7033 |
 
+## Create a view named as 'user_details' by joining two tables :
+
+```
+CREATE VIEW user_details AS SELECT ui.email,ui.profile_name , uc.confirm_password FROM user_info ui, user_credentials uc WHERE ui.id = uc.user_id;
+```
+
+## To see the view table - 'user_details' :
+
+```
+SELECT * FROM user_details;
+```
+
+| email              | profile_name | confirm_password |
+|:------------------:|:------------:|:----------------:|
+| Anu_07@gmail.com   | Ammu_27      | @nuBha_07        |
+| Babu_21@gmail.com  | Bobby_21     | B0bby_21#Bob     |
+| Pallavi@gmail.com  | Cutie_Pie    | P@ll@vi1         |
+| Sara10@gmail.com   | fidaa_user   | SA@r@_10         |
+| Sushanth@gmail.com | King_23      | Su$h@@n_King     |
+
+## Add a column in an existing view table- 'user_details' :
+
+```
+ALTER VIEW user_details AS SELECT ui.id,ui.email,ui.profile_name , uc.confirm_password FROM user_info ui, user_credentials uc WHERE ui.id = uc.user_id;
+```
+
+## To check if the new column has added or not :
+
+```
+ SELECT * FROM user_details;
+ ```
+ ### Result :
+
+| id | email              | profile_name | confirm_password |
+|:--:|:------------------:|:------------:|:----------------:|
+|  1 | Anu_07@gmail.com   | Ammu_27      | @nuBha_07        |
+|  3 | Babu_21@gmail.com  | Bobby_21     | B0bby_21#Bob     |
+|  5 | Pallavi@gmail.com  | Cutie_Pie    | P@ll@vi1         |
+|  2 | Sara10@gmail.com   | fidaa_user   | SA@r@_10         |
+|  4 | Sushanth@gmail.com | King_23      | Su$h@@n_King     |
 
 
