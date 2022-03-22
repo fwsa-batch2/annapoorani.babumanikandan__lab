@@ -209,27 +209,37 @@ DESC user_credentials;
 
 
 
+## Create a table named as 'language' :
+```
+ CREATE TABLE language (id int PRIMARY KEY AUTO_INCREMENT, lang varchar(20) UNIQUE NOT NULL);
+ ```
 
-mysql> CREATE TABLE language (id int PRIMARY KEY AUTO_INCREMENT, lang varchar(20) UNIQUE NOT NULL);
-Query OK, 0 rows affected (0.05 sec)
+## Describe the 'language' table :
+ ```
+ DESC language;
+ ```
+### Result :
 
-mysql> DESC language;
-+-------+-------------+------+-----+---------+----------------+
 | Field | Type        | Null | Key | Default | Extra          |
-+-------+-------------+------+-----+---------+----------------+
+|:-----:|:-----------:|:----:|:---:|:-------:|:--------------:|
 | id    | int         | NO   | PRI | NULL    | auto_increment |
 | lang  | varchar(20) | NO   | UNI | NULL    |                |
-+-------+-------------+------+-----+---------+----------------+
-2 rows in set (0.01 sec)
 
-mysql> INSERT INTO language VALUES (null,'Tamil'),(null,'Telugu'),(null,'Malayalam'),(null,'Kannada'),(null,'Hindi'),(null,'Korean'),(null,'Chinese'),(null,'Bengali');
-Query OK, 8 rows affected (0.01 sec)
-Records: 8  Duplicates: 0  Warnings: 0
 
+## Inserting values into 'language' table :
+
+```
+ INSERT INTO language VALUES (null,'Tamil'),(null,'Telugu'),(null,'Malayalam'),(null,'Kannada'),(null,'Hindi'),(null,'Korean'),(null,'Chinese'),(null,'Bengali');
+```
+
+## To See all the values in language table :
+
+```
 mysql> SELECT * FROM language;
-+----+-----------+
+```
+
 | id | lang      |
-+----+-----------+
+|:--:|:---------:|
 |  8 | Bengali   |
 |  7 | Chinese   |
 |  5 | Hindi     |
@@ -238,8 +248,7 @@ mysql> SELECT * FROM language;
 |  3 | Malayalam |
 |  1 | Tamil     |
 |  2 | Telugu    |
-+----+-----------+
-8 rows in set (0.00 sec)
+
 
 mysql> CREATE TABLE actors(id int PRIMARY KEY AUTO_INCREMENT,name varchar(30) UNIQUE NOT NULL);
 Query OK, 0 rows affected (0.06 sec)
