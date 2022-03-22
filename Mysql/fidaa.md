@@ -300,12 +300,12 @@ SELECT * FROM actors;
 ```
  CREATE TABLE actress(id int PRIMARY KEY AUTO_INCREMENT,name varchar(30) UNIQUE NOT NULL);
  ```
+ 
  ## Inserting values into 'actress' table :
 ``` 
  INSERT INTO actress VALUES(null,'Sai pallavi'),(null,'Kajal'),(null,'Kajol'),(null,'Hansika'),(null,'Anu'),(null,'Jothika'),(null,'Nagma');
  ```
  
-
 ## To see all the values from 'actress' table :
 ```
 SELECT * FROM actress;
@@ -323,38 +323,42 @@ SELECT * FROM actress;
 
 
 
+## Create table named as 'director' :
+```
+ CREATE TABLE director(id int PRIMARY KEY AUTO_INCREMENT,name varchar(20) UNIQUE NOT NULL);
+ ```
+ ## Describe the 'director' table :
+ ```
+ DESC director;
+```
+### Result :
 
-mysql> CREATE TABLE director(id int PRIMARY KEY AUTO_INCREMENT,name varchar(20) UNIQUE NOT NULL);
-Query OK, 0 rows affected (0.05 sec)
-
-mysql> DESC directors;
-ERROR 1146 (42S02): Table 'fidaa.directors' doesn't exist
-mysql> DESC director;
-+-------+-------------+------+-----+---------+----------------+
 | Field | Type        | Null | Key | Default | Extra          |
-+-------+-------------+------+-----+---------+----------------+
+|:-----:|:-----------:|:----:|:---:|:-------:|:--------------:|
 | id    | int         | NO   | PRI | NULL    | auto_increment |
 | name  | varchar(20) | NO   | UNI | NULL    |                |
-+-------+-------------+------+-----+---------+----------------+
-2 rows in set (0.01 sec)
 
-mysql> INSERT INTO directors VALUES(null,'Mani Ratnam'),(null,'Dhanush'),(null,'Selva Ragavan'),(null,'Joji'),(null,'Vignesh Shivan');
-ERROR 1146 (42S02): Table 'fidaa.directors' doesn't exist
-mysql> INSERT INTO director VALUES(null,'Mani Ratnam'),(null,'Dhanush'),(null,'Selva Ragavan'),(null,'Joji'),(null,'Vignesh Shivan');
-Query OK, 5 rows affected (0.01 sec)
-Records: 5  Duplicates: 0  Warnings: 0
 
-mysql> SELECT * FROM director;
-+----+----------------+
+ ## Inserting values into 'director' table :
+
+```
+ INSERT INTO director VALUES(null,'Mani Ratnam'),(null,'Dhanush'),(null,'Selva Ragavan'),(null,'Joji'),(null,'Vignesh Shivan');
+ ```
+
+## To see all the values from 'director' table :
+```
+ SELECT * FROM director;
+```
+
 | id | name           |
-+----+----------------+
+|:--:|:--------------:|
 |  2 | Dhanush        |
 |  4 | Joji           |
 |  1 | Mani Ratnam    |
 |  3 | Selva Ragavan  |
 |  5 | Vignesh Shivan |
-+----+----------------+
-5 rows in set (0.00 sec)
+
+
 
 mysql> SHOW TABLES;
 +------------------+
