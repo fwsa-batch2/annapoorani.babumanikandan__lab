@@ -249,7 +249,7 @@ mysql> SELECT * FROM language;
 |  1 | Tamil     |
 |  2 | Telugu    |
 
-
+## Create a table 
 mysql> CREATE TABLE actors(id int PRIMARY KEY AUTO_INCREMENT,name varchar(30) UNIQUE NOT NULL);
 Query OK, 0 rows affected (0.06 sec)
 
