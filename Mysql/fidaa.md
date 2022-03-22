@@ -394,7 +394,7 @@ DESC artists;
 ## Inserting the values into 'artists' table :
 
  ```
- INSERT INTO artists VALUES(null,'Shivangi'),(null,'Aaron'),(null,'Muguen'),(null,'Poorani');
+ INSERT INTO artists VALUES(null,'Shivangi'),(null,'Aaron'),(null,'Muguen'),(null,'Poorani'),(null,'Dhanush'),(null,'Simbhu'),(null,'Vijay'),(null,'Vikram');
  ```
 
 ## To see all the values from artists :
@@ -407,22 +407,6 @@ DESC artists;
 | id | name     |
 |:--:|:--------:|
 |  2 | Aaron    |
-|  3 | Muguen   |
-|  4 | Poorani  |
-|  1 | Shivangi |
-
-
-mysql> INSERT INTO artists VALUES4 rows in set (0.00 sec)
-414
-(null,'Dhanush'),(null,'Simbhu'),(null,'Vijay'),(null,'Vikram');
-Query OK, 4 rows affected (0.01 sec)
-Records: 4  Duplicates: 0  Warnings: 0
-
-mysql> SELECT * FROM artists;
-+----+----------+
-| id | name     |
-+----+----------+
-|  2 | Aaron    |
 |  5 | Dhanush  |
 |  3 | Muguen   |
 |  4 | Poorani  |
@@ -430,65 +414,49 @@ mysql> SELECT * FROM artists;
 |  6 | Simbhu   |
 |  7 | Vijay    |
 |  8 | Vikram   |
-+----+----------+
-8 rows in set (0.00 sec)
 
-mysql> CREATE TABLE albums(id int AUTO_INCREMENT PRIMARY KEY,artist int , album_name BLOB UNIQUE NOT NULL,poster BLOB NOT NULL ,FOREIGN KEY(artist) REFERENCES artists(id));
-ERROR 1170 (42000): BLOB/TEXT column 'album_name' used in key specification without a key length
-mysql> CREATE TABLE albums(id int AUTO_INCREMENT PRIMARY KEY,artist int , album_name BLOB UNIQUE NOT NULL,poster BLOB NOT NULL ,FOREIGN KEY(artist) REFERENCES artists(id));
-ERROR 1170 (42000): BLOB/TEXT column 'album_name' used in key specification without a key length
-mysql> CREATE TABLE albums(id int AUTO_INCREMENT PRIMARY KEY,artist int , album_name BLOB ,poster BLOB,FOREIGN KEY(artist) REFERENCES artists(id));
-Query OK, 0 rows affected (0.06 sec)
 
-mysql> DESC albums;
-+------------+------+------+-----+---------+----------------+
-| Field      | Type | Null | Key | Default | Extra          |
-+------------+------+------+-----+---------+----------------+
-| id         | int  | NO   | PRI | NULL    | auto_increment |
-| artist     | int  | YES  | MUL | NULL    |                |
-| album_name | blob | YES  |     | NULL    |                |
-| poster     | blob | YES  |     | NULL    |                |
-+------------+------+------+-----+---------+----------------+
-4 rows in set (0.00 sec)
+## Create a table named as 'albums' :
 
-ALTER TABLE albums DROP COLUMN poster;
-Query OK, 0 rows affected (0.10 sec)
-Records: 0  Duplicates: 0  Warnings: 0
+```
+  CREATE TABLE albums (id int PRIMARY KEY AUTO_INCREMENT, artist_id int, poster blob NOT NULL,album_name varchar(255) UNIQUE NOT NULL,FOREIGN KEY(artist_id)REFERENCES artists(id));
+```
+## Describe the 'albums' table :
 
-mysql> SELECT * FROM albums;
-+----+--------+----------------------------------------------+
-| id | artist | album_name                                   |
-+----+--------+----------------------------------------------+
-|  1 |      1 | 0x456E616468757969726520436F76657220536F6E67 |
-+----+--------+----------------------------------------------+
-1 row in set (0.00 sec)
+```
+ DESC albums;
+ ``` 
+### Result :
 
-mysql> DESC albums;
-+------------+------+------+-----+---------+----------------+
-| Field      | Type | Null | Key | Default | Extra          |
-+------------+------+------+-----+---------+----------------+
-| id         | int  | NO   | PRI | NULL    | auto_increment |
-| artist     | int  | YES  | MUL | NULL    |                |
-| album_name | blob | YES  |     | NULL    |                |
-+------------+------+------+-----+---------+----------------+
-3 rows in set (0.01 sec)
+| Field      | Type         | Null | Key | Default | Extra          |
+|:----------:|:------------:|:----:|:---:|:-------:|:--------------:|
+| id         | int          | NO   | PRI | NULL    | auto_increment |
+| artist_id  | int          | YES  | MUL | NULL    |                |
+| poster     | blob         | NO   |     | NULL    |                |
+| album_name | varchar(255) | NO   | UNI | NULL    |                |
 
-mysql> ALTER TABLE albums DROP COLUMN album_name;
-Query OK, 0 rows affected (0.12 sec)
-Records: 0  Duplicates: 0  Warnings: 0
+## Add a column named as "url" in 'albums' table; 
+```
+ALTER TABLE albums ADD COLUMN (url blob not null);
+```
+## To check if the new column was added or not in 'albums' table :
 
-mysql> SELECT * FROM albums;
-+----+--------+
-| id | artist |
-+----+--------+
-|  1 |      1 |
-+----+--------+
-1 row in set (0.00 sec)
+```
+DESC albums;
+```
+  
+### Result :
 
-mysql> DROP TABLE albums;
-Query OK, 0 rows affected (0.03 sec)
+| Field      | Type         | Null | Key | Default | Extra          |
+|:----------:|:------------:|:----:|:---:|:-------:|:--------------:|
+| id         | int          | NO   | PRI | NULL    | auto_increment |
+| artist_id  | int          | YES  | MUL | NULL    |                |
+| poster     | blob         | NO   |     | NULL    |                |
+| album_name | varchar(255) | NO   | UNI | NULL    |                | 
+| url        | blob         | NO   |     | NULL    |                |
 
-mysql> 
+
+
 
 
 
