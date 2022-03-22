@@ -358,57 +358,20 @@ SELECT * FROM actress;
 |  3 | Selva Ragavan  |
 |  5 | Vignesh Shivan |
 
+## To see all the tables
+```
+ SHOW TABLES;
+ ```
 
-
-mysql> SHOW TABLES;
-+------------------+
 | Tables_in_fidaa  |
-+------------------+
+|:----------------:|
 | actors           |
 | actress          |
 | director         |
 | language         |
 | user_credentials |
 | user_info        |
-+------------------+
-6 rows in set (0.00 sec)
 
-mysql> DESC language;
-+-------+-------------+------+-----+---------+----------------+
-| Field | Type        | Null | Key | Default | Extra          |
-+-------+-------------+------+-----+---------+----------------+
-| id    | int         | NO   | PRI | NULL    | auto_increment |
-| lang  | varchar(20) | NO   | UNI | NULL    |                |
-+-------+-------------+------+-----+---------+----------------+
-2 rows in set (0.01 sec)
 
-mysql> DESC director;
-+-------+-------------+------+-----+---------+----------------+
-| Field | Type        | Null | Key | Default | Extra          |
-+-------+-------------+------+-----+---------+----------------+
-| id    | int         | NO   | PRI | NULL    | auto_increment |
-| name  | varchar(20) | NO   | UNI | NULL    |                |
-+-------+-------------+------+-----+---------+----------------+
-2 rows in set (0.01 sec)
-
-mysql> DESC actors;
-+-------+-------------+------+-----+---------+----------------+
-| Field | Type        | Null | Key | Default | Extra          |
-+-------+-------------+------+-----+---------+----------------+
-| id    | int         | NO   | PRI | NULL    | auto_increment |
-| name  | varchar(30) | NO   | UNI | NULL    |                |
-+-------+-------------+------+-----+---------+----------------+
-2 rows in set (0.00 sec)
-
-mysql> DESC actress;
-+-------+-------------+------+-----+---------+----------------+
-| Field | Type        | Null | Key | Default | Extra          |
-+-------+-------------+------+-----+---------+----------------+
-| id    | int         | NO   | PRI | NULL    | auto_increment |
-| name  | varchar(30) | NO   | UNI | NULL    |                |
-+-------+-------------+------+-----+---------+----------------+
-2 rows in set (0.01 sec)
-
-mysql> CREATE TABLE movies (id BIGINT PRIMARY KEY AUTO_INCREMENT, )
 
 
