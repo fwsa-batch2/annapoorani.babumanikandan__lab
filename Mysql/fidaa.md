@@ -295,34 +295,24 @@ SELECT * FROM actors;
 |  7 | Vishal                |
 
 
+## Create a table named as 'actress' :
 
-mysql> CREATE TABLE actress(id int PRIMARY KEY AUTO_INCREMENT,name varchar(30) UNIQUE NOT NULL);
-Query OK, 0 rows affected (0.06 sec)
+```
+ CREATE TABLE actress(id int PRIMARY KEY AUTO_INCREMENT,name varchar(30) UNIQUE NOT NULL);
+ ```
+ ## Inserting values into 'actress' table :
+``` 
+ INSERT INTO actress VALUES(null,'Sai pallavi'),(null,'Kajal'),(null,'Kajol'),(null,'Hansika'),(null,'Anu'),(null,'Jothika'),(null,'Nagma');
+ ```
+ 
 
-mysql> INSERT INTO actress VALUES(null,'Sai pallavi'),(null,'Kajal'),(null,'Kajol'),(null,'Hansika'),(null,'Anu');
-Query OK, 5 rows affected (0.02 sec)
-Records: 5  Duplicates: 0  Warnings: 0
+## To see all the values from 'actress' table :
+```
+SELECT * FROM actress;
+```
 
-mysql> SELECT * FROM actress;
-+----+-------------+
 | id | name        |
-+----+-------------+
-|  5 | Anu         |
-|  4 | Hansika     |
-|  2 | Kajal       |
-|  3 | Kajol       |
-|  1 | Sai pallavi |
-+----+-------------+
-5 rows in set (0.00 sec)
-
-mysql> INSERT INTO actress VALUES(null,'Jothika'),(null,'Nagma');
-Query OK, 2 rows affected (0.01 sec)
-Records: 2  Duplicates: 0  Warnings: 0
-
-mysql> SELECT * FROM actress;
-+----+-------------+
-| id | name        |
-+----+-------------+
+|:--:|:-----------:|
 |  5 | Anu         |
 |  4 | Hansika     |
 |  6 | Jothika     |
@@ -330,8 +320,9 @@ mysql> SELECT * FROM actress;
 |  3 | Kajol       |
 |  7 | Nagma       |
 |  1 | Sai pallavi |
-+----+-------------+
-7 rows in set (0.00 sec)
+
+
+
 
 mysql> CREATE TABLE director(id int PRIMARY KEY AUTO_INCREMENT,name varchar(20) UNIQUE NOT NULL);
 Query OK, 0 rows affected (0.05 sec)
