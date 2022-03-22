@@ -1,5 +1,3 @@
-# AGGREGATE FUNCTION
-
 ## Find the maximum of the salary
 
 ```
@@ -12,7 +10,7 @@
 |      100000 |
 
 
-## Find the minimum of the salary
+## Find the maximum of the salary
 
 ```
  SELECT MIN(salary) FROM employees;
@@ -24,7 +22,7 @@
 |       60000 |
 
 
-## Find the average of the salary
+## Find the maximum of the salary
 
 ```
 SELECT AVG(salary) FROM employees;
@@ -36,7 +34,7 @@ SELECT AVG(salary) FROM employees;
 |  85000.0000 |
 
 
-## Find the count of the salary
+## Find the maximum of the salary
 
 ```
  SELECT COUNT(salary) FROM employees;
@@ -48,7 +46,7 @@ SELECT AVG(salary) FROM employees;
 |             6 |
 
 
-## Find the sum of the salary
+## Find the maximum of the salary
 
 ```
  SELECT SUM(salary) FROM employees;
