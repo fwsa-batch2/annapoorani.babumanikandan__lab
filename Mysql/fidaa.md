@@ -533,7 +533,7 @@ INSERT INTO songs VALUES (null,1,'OH My Kadavulae','file:///home/annapoorani/FWS
 ## Add two more song related to a particular movie :
 
 ```
-mysql> INSERT INTO songs VALUES (null,1,'Friendship Anthem','file:///home/annapoorani/FWSA-BATCH-2/fidaamusicapp-ui/assets/audio/Kadhaippoma.mp3');
+INSERT INTO songs VALUES (null,1,'Friendship Anthem','file:///home/annapoorani/FWSA-BATCH-2/fidaamusicapp-ui/assets/audio/Kadhaippoma.mp3');
 ```
 ```
 INSERT INTO songs VALUES (null,1,'Haiyo haiyo','file:///home/annapoorani/FWSA-BATCH-2/fidaamusicapp-ui/assets/audio/Kadhaippoma.mp3');
