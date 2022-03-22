@@ -79,36 +79,20 @@ SELECT * FROM user_info;
 
 
 ## Create a table named as 'user_credentials'
-mysql> CREATE TABLE user_credentials (user_id int NOT NULL,password varchar(20) UNIQUE NOT NULL, confirm_password varchar(20) UNIQUE NOT NULL, FOREIGN KEY(user_id), user_credentials REFRENCES user_info(id) );
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', user_credentials REFRENCES user_info(id) )' at line 1
-mysql> CREATE TABLE user_credentials (user_id int NOT NULL,password varchar(20) UNIQUE NOT NULL, confirm_password varchar(20) UNIQUE NOT NULL, FOREIGN KEY(user_id), REFRENCES user_info(id))
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', REFRENCES user_info(id))' at line 1
-mysql> CREATE TABLE user_credentials (user_id int NOT NULL,password varchar(20) UNIQUE NOT NULL, confirm_password varchar(20) UNIQUE NOT NULL, FOREIGN KEY(user_id) REFRENCES user_info(id) )
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'REFRENCES user_info(id) )' at line 1
-mysql> CREATE TABLE user_credentials (user_id int NOT NULL,password varchar(20) UNIQUE NOT NULL, confirm_password varchar(20) UNIQUE NOT NULL, FOREIGN KEY(user_id) REFRENCES user_info(id) )
-    -> 
-    -> k;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'REFRENCES user_info(id) )
+```
+CREATE TABLE user_credentials (user_id int NOT NULL,password varchar(20) UNIQUE NOT NULL, confirm_password varchar(20) UNIQUE NOT NULL, FOREIGN KEY(user_id) REFERENCES user_info(id));
+```
 
-k' at line 1
-mysql> CREATE TABLE user_credentials (user_id int NOT NULL,password varchar(20) UNIQUE NOT NULL, confirm_password varchar(20) UNIQUE NOT NULL, FOREIGN KEY(user_id) REFRENCES user_info(id) )
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'REFRENCES user_info(id) )' at line 1
-mysql>  CREATE TABLE user_credentials (user_id int NOT NULL,password varchar(20) UNIQUE NOT NULL, confirm_password varchar(20) UNIQUE NOT NULL, FOREIGN KEY(user_id) REFRENCES user_info(id);
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'REFRENCES user_info(id)' at line 1
-mysql>  CREATE TABLE user_credentials (user_id int NOT NULL,password varchar(20) UNIQUE NOT NULL, confirm_password varchar(20) UNIQUE NOT NULL, FOREIGN KEY(user_id) REFERENCES user_info(id));
-Query OK, 0 rows affected (0.06 sec)
+## Describe a table named as 'user_credentials' :
+```
+ DESC user_credentials;
+ ```
+ ### Result :
 
-mysql> DESC user_crendentials;
-ERROR 1146 (42S02): Table 'fidaa.user_crendentials' doesn't exist
-mysql> DESC user_credentials;
-+------------------+-------------+------+-----+---------+-------+
 | Field            | Type        | Null | Key | Default | Extra |
-+------------------+-------------+------+-----+---------+-------+
+|:----------------:|:-----------:|:----:|:---:|:-------:|:-----:|
 | user_id          | int         | NO   | MUL | NULL    |       |
 | password         | varchar(20) | NO   | PRI | NULL    |       |
 | confirm_password | varchar(20) | NO   | UNI | NULL    |       |
-+------------------+-------------+------+-----+---------+-------+
-3 rows in set (0.01 sec)
+
+
