@@ -70,3 +70,8 @@
 ## Table_12 movies :
 
 ![Screenshot from 2022-03-23 11-30-43](https://user-images.githubusercontent.com/93571073/159640388-68d74b6a-3919-47c2-a806-cab0f1705c3f.png)
+
+## View table named As user_details :
+
+![Screenshot from 2022-03-23 12-37-28](https://user-images.githubusercontent.com/93571073/159643035-4c4afa98-2db5-4c4f-bb8d-4ee209d34c87.png)
+
