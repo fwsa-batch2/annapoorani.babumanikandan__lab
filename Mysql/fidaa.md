@@ -9,7 +9,7 @@
  
 
 | Database           |
-|:                  :|
+|:------------------:|
 | information_schema |
 | mysql              |
 | office             |
