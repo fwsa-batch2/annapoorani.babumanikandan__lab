@@ -755,5 +755,21 @@ SELECT * FROM user_info WHERE id IN (SELECT id FROM user_info);
 |  2 | Sara10@gmail.com  | 1999-12-12 | T      | fidaa_user   |
 |  5 | Pallavi@gmail.com | 2000-12-12 | L      | Cutie_Pie    |
 
+## Want whole user details who has signed in :
+
+```
+ SELECT * FROM user_info ui INNER JOIN user_credentials uc ON ui.id = uc.user_id;
+ ```
+ 
+ ### Result :
+ 
+| id | email              | dob        | gender | profile_name | user_id | password     | confirm_password |
+|:--:|:------------------:|:----------:|:------:|:------------:|:-------:|:------------:|:----------------:|
+|  1 | Anu_07@gmail.com   | 2004-02-27 | F      | Ammu_27      |       1 | @nuBha_07    | @nuBha_07        |
+|  2 | Sara10@gmail.com   | 1999-12-12 | T      | fidaa_user   |       2 | SA@r@_10     | SA@r@_10         |
+|  3 | Babu_21@gmail.com  | 1989-04-21 | M      | Bobby_21     |       3 | B0bby_21#Bob | B0bby_21#Bob     |
+|  4 | Sushanth@gmail.com | 1990-01-23 | M      | King_23      |       4 | Su$h@@n_King | Su$h@@n_King     |
+|  5 | Pallavi@gmail.com  | 2000-12-12 | L      | Cutie_Pie    |       5 | P@ll@vi1     | P@ll@vi1         |
+|  6 | Arjun@gmail.com    | 2007-03-08 | M      | Ajju_01      |       6 | Ajju123      | Ajju123          |
 
 
