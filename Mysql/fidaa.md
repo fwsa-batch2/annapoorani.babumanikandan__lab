@@ -792,3 +792,25 @@ SHOW INDEX FROM user_info;
 | user_info |          0 | profile_name |            1 | profile_name | A         |           6 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 | user_info |          1 | email_idx    |            1 | email        | A         |           6 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 
+
+## Create a unique index on user_credentials table :
+
+```
+CREATE UNIQUE INDEX pass_idx ON user_credentials (password,confirm_password);
+```
+
+
+## To check if the unique index has created or not :
+
+```
+SHOW INDEX FROM user_credentials;
+```
+
+| Table            | Non_unique | Key_name         | Seq_in_index | Column_name      | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|:----------------:|:----------:|:----------------:|:------------:|:----------------:|:---------:|:-----------:|:--------:|:------:|:----:|:----------:|:-------:|:-------------:|:-------:|:----------:|
+| user_credentials |          0 | password         |            1 | password         | A         |           5 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user_credentials |          0 | confirm_password |            1 | confirm_password | A         |           5 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user_credentials |          1 | user_id          |            1 | user_id          | A         |           5 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user_credentials |          1 | pass_idx         |            1 | password         | A         |           5 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user_credentials |          1 | pass_idx         |            2 | confirm_password | A         |           5 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+
