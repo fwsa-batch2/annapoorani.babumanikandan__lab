@@ -597,6 +597,85 @@ SELECT * FROM songs;
 |  3 |        1 | Friendship Anthem   | 0x66696C653A2F2F2F686F6D652F616E6E61706F6F72616E692F465753412D42415443482D322F66696461616D757369636170702D75692F6173736574732F617564696F2F4B616468616970706F6D612E6D7033 |
 |  4 |        1 | Haiyo haiyo         | 0x66696C653A2F2F2F686F6D652F616E6E61706F6F72616E692F465753412D42415443482D322F66696461616D757369636170702D75692F6173736574732F617564696F2F4B616468616970706F6D612E6D7033 |
 
+
+## Add a column to the 'songs' table :
+
+```
+ ALTER TABLE songs ADD COLUMN (artist_id int,FOREIGN KEY(artist_id) REFERENCES artists(id));
+ ```
+
+## To see the id,movie_id,name,artist_id FROM 'songs' table :
+
+```
+ SELECT id,movie_id,name,artist_id FROM songs;
+ ```
+
+| id | movie_id | name                | artist_id |
+|:--:|:--------:|:-------------------:|:---------:|
+|  1 |        1 | Kadhaipoma          |      NULL |
+|  2 |        1 | Marapadhillai Nenje |      NULL |
+|  3 |        1 | Friendship Anthem   |      NULL |
+|  4 |        1 | Haiyo haiyo         |      NULL |
+|  5 |        2 | Vaathi coming       |      NULL |
+|  6 |        2 | Kutty Story         |      NULL |
+|  7 |        2 | Quit pannuda        |      NULL |
+|  8 |        3 | Polladha Ulagam     |      NULL |
+|  9 |        3 | Annana Thaallaatum  |      NULL |
+
+
+
+## Updating values into 'songs' table :
+
+```
+ UPDATE songs SET artist_id=2 WHERE id=1;
+ ```
+```
+UPDATE songs SET artist_id=2 WHERE id=3;
+```
+```
+ UPDATE songs SET artist_id=4 WHERE id=2;
+```
+```
+ UPDATE songs SET artist_id=1 WHERE id=4;
+```
+```
+UPDATE songs SET artist_id=6 WHERE id=5;
+```
+```
+ UPDATE songs SET artist_id=6 WHERE id=6;
+```
+```
+ UPDATE songs SET artist_id=2 WHERE id=7;
+ ```
+
+```
+ UPDATE songs SET artist_id=3 WHERE id=8;
+```
+```
+ UPDATE songs SET artist_id=1 WHERE id=9;
+```
+
+## To see if all values has entered or not :
+```
+ SELECT id,movie_id,name,artist_id FROM songs;
+ ```
+
+### Result :
+
+| id | movie_id | name                | artist_id |
+|:--:|:--------:|:-------------------:|:---------:|
+|  1 |        1 | Kadhaipoma          |         2 |
+|  2 |        1 | Marapadhillai Nenje |         4 |
+|  3 |        1 | Friendship Anthem   |         2 |
+|  4 |        1 | Haiyo haiyo         |         1 |
+|  5 |        2 | Vaathi coming       |         6 |
+|  6 |        2 | Kutty Story         |         6 |
+|  7 |        2 | Quit pannuda        |         2 |
+|  8 |        3 | Polladha Ulagam     |         3 |
+|  9 |        3 | Annana Thaallaatum  |         1 |
+
+
+
 ## Create a view named as 'user_details' by joining two tables :
 
 ```
