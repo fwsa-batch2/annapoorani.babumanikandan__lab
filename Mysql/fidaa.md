@@ -773,3 +773,22 @@ SELECT * FROM user_info WHERE id IN (SELECT id FROM user_info);
 |  6 | Arjun@gmail.com    | 2007-03-08 | M      | Ajju_01      |       6 | Ajju123      | Ajju123          |
 
 
+## Create a index on 'user_info' table :
+
+```
+CREATE INDEX email_idx  ON user_info (email);
+```
+## To check if the index has created or not :
+```
+SHOW INDEX FROM user_info;
+```
+
+### Result :
+
+| Table     | Non_unique | Key_name     | Seq_in_index | Column_name  | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|:---------:|:----------:|:------------:|:------------:|:------------:|:---------:|:-----------:|:--------:|:------:|:----:|:----------:|:-------:|:-------------:|:-------:|:----------:|
+| user_info |          0 | PRIMARY      |            1 | id           | A         |           6 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user_info |          0 | email        |            1 | email        | A         |           6 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user_info |          0 | profile_name |            1 | profile_name | A         |           6 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user_info |          1 | email_idx    |            1 | email        | A         |           6 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+
