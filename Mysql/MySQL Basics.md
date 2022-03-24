@@ -58,14 +58,16 @@ DESC artists;
 
 
 ## To Insert values in a table
-``` INSERT INTO artists VALUES (NULL,'Shivangi');
+``` 
+INSERT INTO artists VALUES (NULL,'Shivangi');
 ```
 ### Result :
 Query OK, 1 row affected (0.01 sec)
 
 ## To see the values in a table
 
-``` SELECT * FROM artists;
+``` 
+SELECT * FROM artists;
 ```
 
 ### Result :
@@ -78,7 +80,9 @@ Query OK, 1 row affected (0.01 sec)
 
 ## Create another table
 
-``` Create table album ()```
+``` 
+Create table album (id int,artist_id int,file varchar(255));
+```
 
 ## To describe a table :
  DESC albums;
@@ -100,7 +104,8 @@ Query OK, 0 rows affected (0.10 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
 ### To see whether the table has fk or not.
-``` DESC albums;
+```
+DESC albums;
 ```
 
 ## Result :
@@ -114,7 +119,8 @@ Records: 0  Duplicates: 0  Warnings: 0
 3 rows in set (0.00 sec)
 
 ## To insert values in table
-``` INSERT INTO albums VALUES (1,1,'https://pagalnew.com/mp3-songs/tamil-mp3-songs/adipoli-vineeth-sreenivasan-128-kbps-sound.mp3');
+```
+INSERT INTO albums VALUES (1,1,'https://pagalnew.com/mp3-songs/tamil-mp3-songs/adipoli-vineeth-sreenivasan-128-kbps-sound.mp3');
 ```
 
 ### Result :
