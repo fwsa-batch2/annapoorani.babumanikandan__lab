@@ -205,8 +205,68 @@ DESC user_credentials;
 |  1 | Anu_07@gmail.com | 2004-02-27 | F      | Ammu_27      |       1 | @nuBha_07 | @nuBha_07        |
 
 
+## Create a table named as 'roles':
+```
+CREATE TABLE roles(id int primary key auto_increment,role_name varchar(30) unique,img_url blob);
+```
+
+## Describe the 'roles' table :
+```
+ DESC roles;
+ ```
+
+| Field     | Type        | Null | Key | Default | Extra          |
+|:---------:|:-----------:|:----:|:---:|:-------:|:--------------:|
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| role_name | varchar(30) | NO   | UNI | NULL    |                |
+| img_url   | blob        | NO   |     | NULL    |                |
+
+## Insert values into roles table :
+```
+INSERT INTO roles VALUES (null,'Admin','0x66696C653A2F2F2F686F6D652F616E6E61706F6F72616E692F446F776E6C6F6164732F61646D696E2D776974682D636F67776865656C732E706E67'),(null,'customer','0x66696C653A2F2F2F686F6D652F616E6E61706F6F72616E692F446F776E6C6F6164732F757365722532302833292E706E67');
+```
+
+## To see the whole data from 'roles' table :
+
+```
+SELECT * FROM roles;
+```
+### Result :
+
+| id | role_name | img_url                                                                                                                  |
+|:--:|:---------:|:------------------------------------------------------------------------------------------------------------------------:|
+|  1 | Admin     | 0x66696C653A2F2F2F686F6D652F616E6E61706F6F72616E692F446F776E6C6F6164732F61646D696E2D776974682D636F67776865656C732E706E67 |
+|  2 | customer  | 0x66696C653A2F2F2F686F6D652F616E6E61706F6F72616E692F446F776E6C6F6164732F757365722532302833292E706E67                     |
 
 
+
+## Create table named as 'user_roles' :
+
+```
+ SELECT * FROM user_roles;
+ ```
+## Describe the table :
+```
+DESC user_roles;
+```
+### Result :
+
+| Field   | Type | Null | Key | Default | Extra          |
+|:-------:|:----:|:----:|:---:|:-------:|:--------------:|
+| id      | int  | NO   | PRI | NULL    | auto_increment |
+| user_id | int  | YES  | MUL | NULL    |                |
+| role_id | int  | YES  | MUL | NULL    |                |
+
+
+##
+### Result :
+| id | user_id | role_id |
+|:--:|:-------:|:-------:|
+|  1 |       1 |       1 |
+|  2 |       2 |       2 |
+|  3 |       3 |       1 |
+|  4 |       4 |       2 |
+|  5 |       5 |       2 |
 
 
 ## Create a table named as 'language' :
