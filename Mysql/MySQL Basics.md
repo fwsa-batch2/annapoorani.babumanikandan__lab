@@ -84,7 +84,7 @@ Query OK, 1 row affected (0.01 sec)
  DESC albums;
 
 | Field     | Type         | Null | Key | Default | Extra |
-+-----------+--------------+------+-----+---------+-------+
+|:---------:|:------------:|:----:|:---:|:-------:|:-----:|
 | id        | int          | YES  |     | NULL    |       |
 | artist_id | int          | YES  |     | NULL    |       |
 | file      | varchar(255) | YES  |     | NULL    |       |
