@@ -717,4 +717,43 @@ ALTER VIEW user_details AS SELECT ui.id,ui.email,ui.profile_name , uc.confirm_pa
 |  2 | Sara10@gmail.com   | fidaa_user   | SA@r@_10         |
 |  4 | Sushanth@gmail.com | King_23      | Su$h@@n_King     |
 
+## Want a whole data whose id matches in user_info by Subquery :
+
+```
+SELECT * FROM user_info WHERE id IN (SELECT id FROM user_info);
+```
+
+| id | email              | dob        | gender | profile_name |
+|:--:|:------------------:|:----------:|:------:|:------------:|
+|  1 | Anu_07@gmail.com   | 2004-02-27 | F      | Ammu_27      |
+|  2 | Sara10@gmail.com   | 1999-12-12 | T      | fidaa_user   |
+|  3 | Babu_21@gmail.com  | 1989-04-21 | M      | Bobby_21     |
+|  4 | Sushanth@gmail.com | 1990-01-23 | M      | King_23      |
+|  5 | Pallavi@gmail.com  | 2000-12-12 | L      | Cutie_Pie    |
+|  6 | Arjun@gmail.com    | 2007-03-08 | M      | Ajju_01      |
+
+## Get whole data from user_info who are all male by using Subquery :
+
+```
+ SELECT * FROM user_info WHERE id IN (SELECT id FROM user_info WHERE gender='M') ;
+ ```
+
+| id | email              | dob        | gender | profile_name |
+|:--:|:------------------:|:----------:|:------:|:------------:|
+|  3 | Babu_21@gmail.com  | 1989-04-21 | M      | Bobby_21     |
+|  4 | Sushanth@gmail.com | 1990-01-23 | M      | King_23      |
+|  6 | Arjun@gmail.com    | 2007-03-08 | M      | Ajju_01      |
+
+## Get whole data from user_info who are not male by using Subquery :
+```
+ SELECT * FROM user_info WHERE id IN (SELECT id FROM user_info WHERE gender<>'M') ;
+ ```
+
+| id | email             | dob        | gender | profile_name |
+|:--:|:-----------------:|:----------:|:------:|:------------:|
+|  1 | Anu_07@gmail.com  | 2004-02-27 | F      | Ammu_27      |
+|  2 | Sara10@gmail.com  | 1999-12-12 | T      | fidaa_user   |
+|  5 | Pallavi@gmail.com | 2000-12-12 | L      | Cutie_Pie    |
+
+
 
