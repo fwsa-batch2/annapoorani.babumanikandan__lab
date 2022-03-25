@@ -4,7 +4,8 @@
 
 ## ER Diagram :
 
-![Screenshot from 2022-03-24 21-36-28](https://user-images.githubusercontent.com/93571073/159960190-908858e5-4963-435f-8647-b3e5d3d6c4eb.png)
+![Screenshot from 2022-03-25 14-11-48](https://user-images.githubusercontent.com/93571073/160085825-357de9ac-439e-4edb-b543-1794d4e3a983.png)
+
 
 ## EER Diagram :
 
