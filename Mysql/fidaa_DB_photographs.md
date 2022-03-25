@@ -8,7 +8,7 @@
 
 ## EER Diagram :
 
-![Screenshot from 2022-03-23 11-30-21](https://user-images.githubusercontent.com/93571073/159639355-3a93d4cb-98d4-4d1f-91f5-7f20a28519bb.png)
+![Screenshot from 2022-03-23 11-30-21](https://user-images.githubusercontent.com/93571073/160095968-c65fa77c-0127-4daa-b24d-95cc2668c767.png)
 
 ## Total Tables in fidaa Database :
 
