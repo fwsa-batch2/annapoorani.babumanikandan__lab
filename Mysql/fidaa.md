@@ -167,6 +167,8 @@ DESC user_credentials;
  SELECT * FROM user_credentials;
  ```
  
+ ### Result :
+ 
 | user_id | password     | confirm_password |
 |:-------:|:------------:|:----------------:|
 |       1 | @nuBha_07    | @nuBha_07        |
@@ -215,6 +217,8 @@ CREATE TABLE roles(id int primary key auto_increment,role_name varchar(30) uniqu
  DESC roles;
  ```
 
+### Result :
+
 | Field     | Type        | Null | Key | Default | Extra          |
 |:---------:|:-----------:|:----:|:---:|:-------:|:--------------:|
 | id        | int         | NO   | PRI | NULL    | auto_increment |
@@ -257,8 +261,16 @@ DESC user_roles;
 | user_id | int  | YES  | MUL | NULL    |                |
 | role_id | int  | YES  | MUL | NULL    |                |
 
+## Insert some values into 'user_roles' table :
+```
+INSERT INTO user_roles VALUES (null,1,1),(null,2,2),(null,3,1),(null,4,2),(null,5,2);
+```
 
-##
+## To see all the values from 'user_roles' :
+```
+SELECT * FROM user_roles;
+```
+
 ### Result :
 | id | user_id | role_id |
 |:--:|:-------:|:-------:|
