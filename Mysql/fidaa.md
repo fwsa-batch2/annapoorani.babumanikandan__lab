@@ -83,6 +83,26 @@ SELECT * FROM user_info;
 |  5 | Pallavi@gmail.com  | 2000-12-12 | L      | Cutie_Pie    |
 |  6 | Arjun@gmail.com    | 2007-03-08 | M      | Ajju_01      |
 
+## Want a first value from the user_info table:
+```
+ SELECT email FROM user_info LIMIT 1;
+ ```
+### Result :
+| email            |
+|:----------------:|
+| Anu_07@gmail.com |
+
+## Want a last value from the user_info table:
+```
+ SELECT email FROM user_info ORDER BY email DESC LIMIT 1;
+ ```
+### Result :
+
+| email              |
+|:------------------:|
+| Sushanth@gmail.com |
+
+
 
 ## Create a table named as 'user_credentials'
 ```
