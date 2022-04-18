@@ -4,11 +4,11 @@
 
 ## ER Diagram :
 
-![Screenshot from 2022-03-24 21-36-28](https://user-images.githubusercontent.com/93571073/159960190-908858e5-4963-435f-8647-b3e5d3d6c4eb.png)
+![Screenshot from 2022-03-25 14-32-26](https://user-images.githubusercontent.com/93571073/160089581-ef566bdd-c9cb-43b0-bfc8-b16b9d420e0d.png)
 
 ## EER Diagram :
 
-![Screenshot from 2022-03-23 11-30-21](https://user-images.githubusercontent.com/93571073/159639355-3a93d4cb-98d4-4d1f-91f5-7f20a28519bb.png)
+![Screenshot from 2022-03-23 11-30-21](https://user-images.githubusercontent.com/93571073/160095968-c65fa77c-0127-4daa-b24d-95cc2668c767.png)
 
 ## Total Tables in fidaa Database :
 
