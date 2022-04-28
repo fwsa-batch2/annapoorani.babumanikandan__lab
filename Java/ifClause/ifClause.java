@@ -1,3 +1,5 @@
+package ifClause;
+
 public class ifClause {
     public static void main(String [] args){
         int age =12;

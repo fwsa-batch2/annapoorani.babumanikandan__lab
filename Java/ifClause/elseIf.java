@@ -1,3 +1,5 @@
+package ifClause;
+
 public class elseIf {
     public static void main(String [] args){
         int mark=40;

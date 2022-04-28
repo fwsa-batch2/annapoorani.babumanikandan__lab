@@ -1,5 +1,7 @@
 public class Calculator{
     
+    public Calculator() {
+    }
     public static void main(String[] args){
         int addition = add(12,13);
         int subraction = sub(12,13);
@@ -39,7 +41,7 @@ public class Calculator{
         int modulo = num1%num2;
         int result = modulo;
         return result;
-    }
+    }}
 
 
 
