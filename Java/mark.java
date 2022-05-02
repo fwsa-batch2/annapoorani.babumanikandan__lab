@@ -1,3 +1,4 @@
+import java.util.*;
 public class mark {
     public static int x = 90;
     public static void main(String[] args) {
