@@ -12,11 +12,20 @@ public class Pulsar extends bike {
         // TODO Auto-generated method stub
         System.out.println("Go Fast!!!");
     }
+    
     public static void main(String[] args){
         Pulsar pls = new Pulsar();
         pls.run();
+
+        honda hon = new honda();
+        hon.run();
     }
 
     
+    }
+    class honda extends bike{
+        void run(){
+            System.out.println("Run fastly!");
+        }
     }
 

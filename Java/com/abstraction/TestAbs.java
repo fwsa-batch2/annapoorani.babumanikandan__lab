@@ -4,6 +4,7 @@ package com.abstraction;
 // By Using abstraction, we can achieve the "Multiple Inheritance"
 abstract class shape{
   abstract void draw();
+  
 }
 
 public class TestAbs {
@@ -20,6 +21,7 @@ class circle extends shape{
     void draw(){
         System.out.println("Draw Circle!");
     }
+   
 }
 
 class rectangle extends shape{
