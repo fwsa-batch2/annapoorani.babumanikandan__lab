@@ -32,6 +32,7 @@ class Bank1 extends Bank{
 
 
 }
+
 class Bank2 {
     public static void main(String[] args){
         
