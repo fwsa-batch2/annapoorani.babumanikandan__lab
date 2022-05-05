@@ -1,3 +1,4 @@
+package com.opratorexamples;
 public class arithmeticOperator {
     public static void main(String [] args){
         int num1 = 10, num2 = 20;

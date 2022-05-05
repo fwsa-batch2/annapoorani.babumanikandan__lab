@@ -1,3 +1,4 @@
+package com.opratorexamples;
 public class ternaryOperator {
     public static void main(String[] args){
         int num1=50,num2=30,num3;
