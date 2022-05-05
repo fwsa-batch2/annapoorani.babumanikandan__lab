@@ -9,5 +9,7 @@ public class StringExample {
         char[] alpha ={'a','b','c','d'};
         String newStr = new String(alpha);
         System.out.println("Char value is " + newStr);
+
+        // Expected output is "abcd"
     }
 }

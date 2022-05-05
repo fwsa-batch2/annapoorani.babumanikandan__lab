@@ -6,6 +6,16 @@ public class SplitEg {
         String s ="Welcome all and happy to see you frds";
         String arr[]= s.split(" ",7);
         for(String result : arr){
-        System.out.println(result);}
+        System.out.println(result);
+    
+        // Expected output is 
+        // "Welcome
+        // all
+        // and
+        // happy
+        // to
+        // see
+        // you frds"
+    }
     }
 }
