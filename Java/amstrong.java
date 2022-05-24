@@ -1,37 +1,25 @@
-// public class amstrong {
-//     public static void main(String [] args){
+import java.util.Scanner;
 
-//         int num = 153; 
-//         int number, temp, total = 0;
 
-//        int number = num;
+public class amstrong{
+    public static void main(String[] args) {
+        int input,temp,remainder,result=0;
 
-//         while(number != 0){
-//             temp= number % 10;
-//             total = total + temp*temp*temp;
-//             number/=10;
-
-//         }
-//         if(total==num){
-//             System.out.print(num + 'is amstrong number')};
-//             else{
-//                 System.out.print(num+'is not amstrong number') }; 
-//     }
-// }
-
-//         int num = 370, number, temp, total = 0;
-
-//         number = num;
-//         while (number != 0)
-//         {
-//             temp = number % 10;
-//             total = total + temp*temp*temp;
-//             number /= 10;
-//         }
-
-//         if(total == num)
-//             System.out.println(num + " is an Armstrong number");
-//         else
-//             System.out.println(num + " is not an Armstrong number");
-//     }
+        Scanner sc = new Scanner(System.in);
+        input = sc.nextInt();
+        temp = input;
+        while(temp!=0){
+            remainder = temp%10;
+            
+            result +=Math.pow(remainder, 3);
+            temp/=10;
+            // System.out.println(temp);
+        }
+        sc.close();
+        if(result==input){
+        System.out.println(input+" is Amstrong value");}
+        else{
+            System.out.println(input+" is not a Amstrong value");}
+        }
+    }
 // }

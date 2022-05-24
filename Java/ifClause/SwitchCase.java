@@ -30,7 +30,10 @@ public class SwitchCase {
             break;
             case 12 : monthString="Hi I'm Dec";
             break;
+            
         }
         System.out.println(monthString);
     }
 }
+
+// Expected result is "Hi I'm July" - 7

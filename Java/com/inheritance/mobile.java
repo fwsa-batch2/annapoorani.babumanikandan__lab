@@ -20,9 +20,9 @@ package com.inheritance;
     public static void main(String[] args){
 
         samsung s = new samsung();
-    // s.camera();
-   s.camera();
-   
+    
+       s.camera();
+       
     //     micromax m = new micromax();
     // m.camera();
     // m.ringtone();
@@ -34,27 +34,28 @@ package com.inheritance;
     
 }
 
-
  class samsung extends mobile{
      
     public void camera(){
         System.out.println("Please Smile from samsung!");
+        super.camera();
     }
     public void flash(){
         System.out.println("chik chik from samsung!!!");
+
     }
     
 }
 
-class micromax extends mobile{
-    public void ringtone(){
-        System.out.println("Hello Sweety I'm calling from micromax!!!");
-    }
-}
+// class micromax extends mobile{
+//     public void ringtone(){
+//         System.out.println("Hello Sweety I'm calling from micromax!!!");
+//     }
+// }
 
-class realMe extends samsung{
-    public void ringtone(){
-        System.out.println("Hello Sweety I'm calling from realme!!!");
-    }
-}
+// class realMe extends samsung{
+//     public void ringtone(){
+//         System.out.println("Hello Sweety I'm calling from realme!!!");
+//     }
+// }
 

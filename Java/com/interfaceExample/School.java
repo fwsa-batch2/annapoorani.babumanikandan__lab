@@ -2,6 +2,7 @@ package com.interfaceExample;
 
 interface schoolFee{
     double fee( double f);
+    
 }
 
 class xyz implements schoolFee{

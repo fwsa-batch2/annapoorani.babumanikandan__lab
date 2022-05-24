@@ -17,7 +17,7 @@ public class centralBank {
 }
 }
 class stateBank extends Bank {
-    public void main(String[] args){
+    public static void main(String[] args){
         stateBank obj1 = new stateBank();
 
         // System.out.println("Default var is "+obj1.ifsc);

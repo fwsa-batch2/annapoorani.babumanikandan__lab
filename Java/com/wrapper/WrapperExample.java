@@ -5,8 +5,9 @@ public class WrapperExample {
 
         // { BOXING }
 
-        int a = 27;          
-        Integer valueOfA= Integer.valueOf(a);
+        int a = 27;         
+        // Integer valueOfA = Integer.valueOf(a);
+        Integer valueOfA = a;
         System.out.println("The boxed value is "+valueOfA);
 
         boolean married = false;

@@ -6,7 +6,7 @@ public class Bank {
     public int misc=20427;
     protected int mobNo =952341567;
 
-    public void main(String[] args){
+    public static void main(String[] args){
 
         Bank obj1 = new Bank();
 
@@ -21,7 +21,7 @@ public class Bank {
 }
 
 class Bank1 extends Bank{
-    public void main(String[] args){
+    public static void main(String[] args){
         Bank obj2 = new Bank();
         System.out.println("Default var is "+obj2.ifsc);
         // System.out.println("Private var is :"+obj2. accNo);

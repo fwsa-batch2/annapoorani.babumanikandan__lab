@@ -5,6 +5,10 @@ package com.abstraction;
 // Calling the abs method "run()" in main method.
 abstract class bike{
   abstract void run();
+  int speed(){
+      int s =100;
+    return s;
+  }
 }
 public class Pulsar extends bike {
   
@@ -16,9 +20,11 @@ public class Pulsar extends bike {
     public static void main(String[] args){
         Pulsar pls = new Pulsar();
         pls.run();
+       System.out.println("Pulsar speed is "+ pls.speed());
 
         honda hon = new honda();
         hon.run();
+
     }
 
     

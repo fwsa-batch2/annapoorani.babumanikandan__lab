@@ -1,4 +1,4 @@
-package com.scannerExample;
+package com.scannerexample;
 import java.util.Scanner;
 public class ScannerExample {
     public static void main(String[] args){
@@ -32,6 +32,8 @@ public class ScannerExample {
     System.out.println("Are you 18+?");
     boolean bn = obj.nextBoolean();
     System.err.println("The age is "+ bn);
+
+    obj.close();
 
     }
 }
